@@ -503,3 +503,104 @@ li.none-bg {
 .modal-form-button:focus {
   background-color: #188ce8;
 }
+
+/* cats */
+.cat-list {
+  list-style: none;
+  padding: 0;
+}
+
+
+.cat-form {
+  background-color: #ff9c00;
+  border-radius: 15px;
+  padding: 20px;
+  margin-bottom: 20px;
+  width: 95%;
+}
+
+
+.cat-input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: none;
+  border-radius: 5px;
+  background-color: #fff;
+  font-size: 16px;
+}
+
+
+.cat-button {
+  padding: 15px 30px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 18px;
+  transition: background-color 0.3s;
+}
+
+
+.cat-button-primary {
+  background-color: #4c281e;
+  color: #fff;
+}
+
+
+.cat-button-secondary {
+  background-color: #fff;
+  color: #4c281e;
+  border: 2px solid #4c281e;
+}
+
+
+.cat-button:hover {
+  opacity: 0.8;
+}
+
+.cat-item {
+  background-color: #ff9c00;
+  border-radius: 10px;
+  padding: 15px;
+  margin-bottom: 10px;
+  width: 95%;
+}
+
+
+.cat-info {
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  color: #4c281e;
+}
+
+
+.cat-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+
+.cat-button-edit {
+  background-color: #4c281e;
+  color: #fff;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+
+.cat-button-delete {
+  background-color: #fff;
+  color: #4c281e;
+  border: 2px solid #4c281e;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+
+.cat-button:hover {
+  opacity: 0.8;
+}

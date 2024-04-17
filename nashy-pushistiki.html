@@ -57,93 +57,38 @@
       </div>
       <!-- Наші пухнасті друзі -->
       <div id="content">
-        <!-- Контент - правий блок -->
-        <div class="right" style="margin-right: 150px">
-          <h1>Наші пухнасті друзі!</h1>
-          <!-- Створення галереї -->
-          <div id="gallery" style="margin-top: -15px; margin-left: -40px">
-            <ul id="navigation">
-              <li>
-                <a href="#picture1">
-                  <img
-                    alt="кіт 1"
-                    src="/images/cat1.png"
-                    width="100"
-                    height="100"
-                  />
-                </a>
-              </li>
-              <li>
-                <a href="#picture2">
-                  <img
-                    alt="кіт 2"
-                    src="/images/cat2.png"
-                    width="130"
-                    height="100"
-                  />
-                </a>
-              </li>
-              <li>
-                <a href="#picture3">
-                  <img
-                    alt="кіт 3"
-                    src="/images/cat3.png"
-                    width="150"
-                    height="100"
-                  />
-                </a>
-              </li>
-              <li>
-                <a href="#picture4">
-                  <img
-                    alt="кіт 4"
-                    src="/images/cat4.png"
-                    width="150"
-                    height="100"
-                  />
-                </a>
-              </li>
-            </ul>
-            <div id="full-picture">
-              <div>
-                <a name="picture1">
-                  <img
-                    alt="Великий кіт 1"
-                    src="/images/cat1.png"
-                    width="600"
-                    height="600"
-                /></a>
-              </div>
-              <div>
-                <a name="picture2">
-                  <img
-                    alt="Великий кіт 2"
-                    src="/images/cat2.png"
-                    width="600"
-                    height="500"
-                /></a>
-              </div>
-              <div>
-                <a name="picture3">
-                  <img
-                    alt="Великий кіт 3"
-                    src="/images/cat3.png"
-                    width="700"
-                    height="500"
-                /></a>
-              </div>
-              <div>
-                <a name="picture4">
-                  <img
-                    alt="Великий кіт 4"
-                    src="/images/cat4.png"
-                    width="750"
-                    height="600"
-                /></a>
-              </div>
-            </div>
-          </div>
-        </div>
+        <h1>Список котів</h1>
+        <ul id="cat-list" class="cat-list"></ul>
+
+        <!-- Add New Cat Form -->
+        <h2>Додати нового кота</h2>
+        <form id="add-cat-form" class="cat-form">
+          <label for="name">Імя:</label>
+          <input type="text" id="name" class="cat-input" required /><br />
+          <label for="photo">Додати фото</label>
+          <input type="file" id="photo" class="cat-input" /> <br />
+          <label for="breed">Порода:</label>
+          <input type="text" id="breed" class="cat-input" /><br />
+          <label for="age">Вік:</label>
+          <input type="number" id="age" class="cat-input" /><br />
+
+          <button id="add-cat-button" class="cat-button">Надіслати</button>
+        </form>
+
+        <h2>Редагувати кота</h2>
+        <form id="edit-cat-form" class="cat-form" style="display: none">
+          <input type="hidden" id="edit-cat-id" />
+          <label for="edit-name">Імя:</label>
+          <input type="text" id="edit-name" class="cat-input" required /><br />
+          <label for="edit-breed">Порода:</label>
+          <input type="text" id="edit-breed" class="cat-input" /><br />
+          <label for="edit-age">Вік:</label>
+          <input type="number" id="edit-age" class="cat-input" /><br />
+          <button id="update-cat-button" class="cat-button">Оновити</button>
+          <button id="cancel-update-button" class="cat-button">
+            Відмінити
+          </button>
+        </form>
       </div>
 
       <div class="myclr"></div>
@@ -154,5 +99,6 @@
         <div class="myclr"></div>
       </div>
     </div>
+    <script src="./js/modal.js"></script>
   </body>
 </html>
