@@ -7,6 +7,10 @@ const catSchema = new mongoose.Schema({
   },
   breed: String,
   age: Number,
+  image: {
+    data: Buffer,
+    contentType: String,
+  },
 });
 
 const Cat = mongoose.model("Cat", catSchema);

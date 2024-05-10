@@ -2,6 +2,11 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
 const cors = require("cors");
+const multer = require("multer");
+const path = require("path");
+const fs = require("fs");
+
+// Import Cat model
 const Cat = require("./models/Cat");
 
 const app = express();
@@ -10,15 +15,30 @@ app.use(express.static("public"));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
+// Multer configuration for file uploads
+const storage = multer.diskStorage({
+  destination: (req, file, cb) => {
+    cb(null, "uploads");
+  },
+  filename: (req, file, cb) => {
+    cb(null, file.fieldname + "-" + Date.now());
+  },
+});
+
+const upload = multer({ storage: storage });
+
 // Connect to MongoDB
 mongoose
   .connect(
-    "mongodb+srv://laflame4308:jrIstXrzVLuRHFID@cluster0.xl9t6gu.mongodb.net/cat_crud_db?retryWrites=true&w=majority&appName=Cluster0"
+    "mongodb+srv://laflame4308:jrIstXrzVLuRHFID@cluster0.xl9t6gu.mongodb.net/cat_crud_db?retryWrites=true&w=majority&appName=Cluster0",
+    { useNewUrlParser: true, useUnifiedTopology: true }
   )
   .then(() => console.log("MongoDB connected"))
   .catch((err) => console.error("MongoDB connection error:", err));
 
 // Routes
+
+// Render page with cat images
 app.get("/", async (req, res) => {
   try {
     const cats = await Cat.find();
@@ -29,10 +49,19 @@ app.get("/", async (req, res) => {
   }
 });
 
-app.post("/cats", async (req, res) => {
+// Add a new cat
+app.post("/cats", upload.single("photo"), async (req, res) => {
   try {
     const { name, breed, age } = req.body;
-    const cat = new Cat({ name, breed, age });
+    const cat = new Cat({
+      name,
+      breed,
+      age,
+      image: {
+        data: fs.readFileSync(req.file.path),
+        contentType: req.file.mimetype,
+      },
+    });
     await cat.save();
     res.status(201).json(cat);
   } catch (err) {
@@ -41,6 +70,7 @@ app.post("/cats", async (req, res) => {
   }
 });
 
+// Update cat information
 app.post("/update/:id", async (req, res) => {
   try {
     const { name, breed, age } = req.body;
@@ -52,6 +82,7 @@ app.post("/update/:id", async (req, res) => {
   }
 });
 
+// Delete a cat
 app.get("/delete/:id", async (req, res) => {
   try {
     await Cat.findByIdAndDelete(req.params.id);

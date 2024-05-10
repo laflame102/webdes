@@ -8,13 +8,24 @@
   box-sizing: border-box;
 }
 
+html {
+  height: 100%;
+  overflow: hidden;
+}
 body {
-  padding: 0px;
   margin: 0;
+  padding: 0;
+  perspective: 1px;
+  transform-style: preserve-3d;
+  overflow-y: scroll;
+  overflow-x: hidden;
+
+  color: #fff;
   background: #4c281e;
   font-size: 14px;
   font-family: Arial, Sans-serif;
 }
+
 #basic {
   width: 960px;
   min-height: 950px;
@@ -55,10 +66,11 @@ figure.img {
   height: 74px;
 }
 .bg-1 {
-  width: 950px;
   height: 64px;
   background: #4c281e url(images/m1.png) repeat-x;
   padding: 0 0 0 10px;
+  display: flex;
+  justify-content: center;
 }
 .bg-2 {
   width: 940px;
@@ -206,7 +218,7 @@ li.none-bg {
   margin-right: 15px;
 }
 
-@media (max-width: 500px) {
+@media (max-width: 768px) {
   .container {
     text-align: center;
   }
@@ -510,7 +522,6 @@ li.none-bg {
   padding: 0;
 }
 
-
 .cat-form {
   background-color: #ff9c00;
   border-radius: 15px;
@@ -518,7 +529,6 @@ li.none-bg {
   margin-bottom: 20px;
   width: 95%;
 }
-
 
 .cat-input {
   width: 100%;
@@ -530,7 +540,6 @@ li.none-bg {
   font-size: 16px;
 }
 
-
 .cat-button {
   padding: 15px 30px;
   border: none;
@@ -540,19 +549,16 @@ li.none-bg {
   transition: background-color 0.3s;
 }
 
-
 .cat-button-primary {
   background-color: #4c281e;
   color: #fff;
 }
-
 
 .cat-button-secondary {
   background-color: #fff;
   color: #4c281e;
   border: 2px solid #4c281e;
 }
-
 
 .cat-button:hover {
   opacity: 0.8;
@@ -566,20 +572,17 @@ li.none-bg {
   width: 95%;
 }
 
-
 .cat-info {
   font-family: Arial, sans-serif;
   font-size: 16px;
   color: #4c281e;
 }
 
-
 .cat-buttons {
   display: flex;
   justify-content: space-between;
   margin-top: 10px;
 }
-
 
 .cat-button-edit {
   background-color: #4c281e;
@@ -590,7 +593,6 @@ li.none-bg {
   cursor: pointer;
 }
 
-
 .cat-button-delete {
   background-color: #fff;
   color: #4c281e;
@@ -600,7 +602,38 @@ li.none-bg {
   cursor: pointer;
 }
 
-
 .cat-button:hover {
   opacity: 0.8;
+}
+/* dvdvdvdv */
+
+header {
+  box-sizing: border-box;
+  min-height: 100vh;
+  text-align: center;
+  padding-top: 20%;
+  transform-style: inherit;
+  width: 100vw;
+}
+header::before {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  z-index: -1;
+  transform-origin: center;
+  min-height: 100vh;
+  background-image: url("https://th-thumbnailer.cdn-si-edu.com/SdA0AhP9N35lksS_Wak5pJP03Ps=/fit-in/1072x0/https://tf-cmsv2-smithsonianmag-media.s3.amazonaws.com/filer/52/fe/52fe56f8-8fbd-4ca7-a671-c66af3a49eba/img_3266.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  transition: 1s;
+  /* Параллакс */
+  transform: translateZ(-1px) scale(2);
+}
+header h1 {
+  margin-top: -100px;
+  font-size: 42px;
 }

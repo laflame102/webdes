@@ -13,6 +13,8 @@
 
 // forms
 
+// script.js
+
 document.addEventListener("DOMContentLoaded", () => {
   fetchCats();
 
@@ -41,6 +43,7 @@ async function fetchCats() {
       throw new Error("Failed to fetch cats");
     }
     const cats = await response.json();
+    console.log(cats);
     displayCats(cats);
   } catch (error) {
     console.error("Error:", error);
@@ -56,7 +59,19 @@ function displayCats(cats) {
 
     const catInfo = document.createElement("div");
     catInfo.classList.add("cat-info");
-    catInfo.textContent = `${cat.name} - ${cat.breed} - ${cat.age} років`;
+
+    const catImage = document.createElement("img");
+
+    catImage.src = `data:${cat.image.contentType};base64,${cat.image.data}`;
+
+    catInfo.appendChild(catImage);
+
+    // Create text content for cat
+    const catText = document.createElement("span");
+    catText.textContent = `${cat.name} - ${cat.breed} - ${cat.age} років`;
+
+    // Append text content to catInfo div
+    catInfo.appendChild(catText);
 
     const buttonsContainer = document.createElement("div");
     buttonsContainer.classList.add("cat-buttons");
@@ -85,18 +100,24 @@ async function addCat(form) {
   const name = form.querySelector("#name").value;
   const breed = form.querySelector("#breed").value;
   const age = form.querySelector("#age").value;
+  const image = form.querySelector("#photo").files[0];
 
   try {
+    const formData = new FormData();
+    formData.append("name", name);
+    formData.append("breed", breed);
+    formData.append("age", age);
+    formData.append("photo", image);
+
     const response = await fetch("http://localhost:3000/cats", {
       method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ name, breed, age }),
+      body: formData,
     });
+
     if (!response.ok) {
       throw new Error("Failed to add cat");
     }
+
     location.reload();
   } catch (error) {
     console.error("Error:", error);

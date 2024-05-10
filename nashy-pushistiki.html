@@ -7,21 +7,18 @@
     <link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico" />
   </head>
   <body>
-    <!-- Основний блок сайту -->
     <div id="basic">
-      <!-- Шапка сайту -->
       <div id="head-site">
-        <a href="index.html"
-          ><img
+        <a href="index.html">
+          <img
             src="/images/nekofee.png"
             width="280"
             height="130"
             alt="Котейня"
             title="Котейня"
-        /></a>
+          />
+        </a>
       </div>
-
-      <!-- Верхнє меню сайту -->
       <div id="menu-top">
         <div class="bg-1">
           <ul>
@@ -55,14 +52,11 @@
         </div>
         <div class="bg-2"></div>
       </div>
-      <!-- Наші пухнасті друзі -->
       <div id="content">
         <h1>Список котів</h1>
         <ul id="cat-list" class="cat-list"></ul>
-
-        <!-- Add New Cat Form -->
         <h2>Додати нового кота</h2>
-        <form id="add-cat-form" class="cat-form">
+        <form id="add-cat-form" class="cat-form" enctype="multipart/form-data">
           <label for="name">Імя:</label>
           <input type="text" id="name" class="cat-input" required /><br />
           <label for="photo">Додати фото</label>
@@ -71,10 +65,8 @@
           <input type="text" id="breed" class="cat-input" /><br />
           <label for="age">Вік:</label>
           <input type="number" id="age" class="cat-input" /><br />
-
           <button id="add-cat-button" class="cat-button">Надіслати</button>
         </form>
-
         <h2>Редагувати кота</h2>
         <form id="edit-cat-form" class="cat-form" style="display: none">
           <input type="hidden" id="edit-cat-id" />
@@ -90,9 +82,7 @@
           </button>
         </form>
       </div>
-
       <div class="myclr"></div>
-      <!-- Підвал -->
       <div id="podval">
         <div class="yellow"></div>
         <div class="p1"><br /></div>
