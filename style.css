@@ -8,10 +8,10 @@
   box-sizing: border-box;
 }
 
-html {
+/* html {
   height: 100%;
   overflow: hidden;
-}
+} */
 body {
   margin: 0;
   padding: 0;
@@ -26,13 +26,6 @@ body {
   font-family: Arial, Sans-serif;
 }
 
-#basic {
-  width: 960px;
-  min-height: 950px;
-  margin: 0 auto;
-  padding: 20px 20px 20px 20px;
-  background: #fff;
-}
 img {
   border: 0;
 }
@@ -65,6 +58,69 @@ figure.img {
   width: 960px;
   height: 74px;
 }
+
+/* fff */
+.navigation {
+  background-color: #f2f2f2; /* колір тла для всіх пристроїв */
+  overflow: hidden;
+  text-align: center; /* центрування елементів */
+}
+
+.navigation ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: inline-block; /* робить меню центрованим */
+}
+
+.navigation li {
+  display: inline-block; /* робить пункти меню центрованими */
+}
+
+.navigation a {
+  display: block;
+  padding: 8px;
+  text-decoration: none;
+  color: #fff; /* колір тексту білий */
+  font-size: 16px; /* розмір тексту за замовчуванням */
+}
+
+/* Стилі для екранів мобільних пристроїв */
+@media screen and (max-width: 767px) {
+  .navigation {
+    background-color: #f2f2f2; /* колір тла для мобільних пристроїв */
+  }
+
+  .navigation ul {
+    width: 100%; /* розширення меню на всю ширину */
+  }
+
+  .navigation li {
+    display: block; /* зміна відображення на блочний для мобільних */
+    width: 100%; /* розширення пунктів меню на всю ширину */
+    font-size: 28px; /* розмір тексту для мобільних */
+  }
+
+  .navigation a {
+    padding: 8px;
+    margin: 0; /* видалення зовнішнього відступу */
+    font-size: 28px; /* розмір тексту для мобільних */
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .navigation {
+    background-color: #333; /* колір тла для великих екранів */
+  }
+
+  .navigation a {
+    padding: 8px 20px; /* більше відступу для посилань */
+    font-size: 16px; /* розмір тексту для ПК */
+  }
+}
+
+/* fff */
+
 .bg-1 {
   height: 64px;
   background: #4c281e url(images/m1.png) repeat-x;
@@ -218,16 +274,14 @@ li.none-bg {
   margin-right: 15px;
 }
 
-@media (max-width: 768px) {
-  .container {
-    text-align: center;
-  }
+.container {
+  text-align: center;
+}
 
-  .container img {
-    margin: auto;
-    float: none;
-    display: block;
-  }
+.container img {
+  margin: auto;
+  float: none;
+  display: block;
 }
 
 #gallery {
@@ -306,214 +360,6 @@ li.none-bg {
 }
 .close:hover {
   background: #e6e6ff;
-}
-
-/* modal */
-.backdrop {
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 100;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.2);
-
-  transition: visibility 250ms cubic-bezier(0.4, 0, 0.2, 1),
-    opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.backdrop.is-hidden {
-  visibility: hidden;
-  opacity: 0;
-  pointer-events: none;
-}
-
-.modal-window {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 528px;
-  height: 581px;
-  transform: translate(-50%, -50%);
-  background-color: var(--white-color);
-  padding: 40px;
-}
-
-.modal-window-button {
-  position: absolute;
-  top: 8px;
-  right: 8px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 30px;
-  height: 30px;
-  border-radius: 50%;
-  border: 1px solid rgba(0, 0, 0, 0.1);
-  padding: 0;
-  background-color: transparent;
-  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.modal-window-button:hover,
-.modal-window-button:focus {
-  fill: var(--color-links);
-}
-
-.modal-close {
-  width: 18px;
-  height: 18px;
-}
-
-.form-title {
-  font-weight: 700;
-  font-size: 20px;
-  line-height: 1.15;
-  text-align: center;
-  color: var(--black-color);
-
-  margin-bottom: 12px;
-}
-
-.modal-form {
-  display: flex;
-  flex-direction: column;
-}
-
-.modal-form-label {
-  margin-bottom: 10px;
-  color: var(--text-color);
-  font-size: 12px;
-}
-
-.modal-form-input {
-  width: 100%;
-  border: 1px solid rgba(33, 33, 33, 0.2);
-  border-radius: 4px;
-  height: 40px;
-  padding-left: 42px;
-  display: block;
-
-  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.modal-form-input:focus + .form-svg {
-  fill: var(--color-links);
-}
-
-.modal-form-input:focus {
-  border-color: var(--color-links);
-  outline: none;
-}
-
-.modal-form-message {
-  width: 100%;
-  height: 120px;
-  padding: 12px 16px;
-  margin-top: 4px;
-  border: 1px solid rgba(33, 33, 33, 0.2);
-  border-radius: 4px;
-  resize: none;
-
-  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.modal-form-textarea {
-  font-size: 12px;
-  margin-bottom: 20px;
-}
-
-.modal-form-message::placeholder {
-  color: rgba(117, 117, 117, 0.5);
-  font-size: 12px;
-  line-height: 1.17;
-  letter-spacing: 0.01em;
-}
-
-.modal-form-message:focus {
-  border-color: var(--color-links);
-  outline: none;
-}
-
-.form-svg-wrapper {
-  position: relative;
-  margin-top: 4px;
-}
-
-.form-svg {
-  position: absolute;
-  top: 50%;
-  left: 12px;
-  transform: translateY(-50%);
-
-  display: block;
-  width: 18px;
-  height: 18px;
-  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.checkbox-policy-link {
-  color: var(--color-links);
-  font-size: 14px;
-  line-height: 1.71;
-}
-
-.checkbox-text {
-  font-size: 14px;
-  line-height: 1.71;
-  color: var(--text-color);
-}
-
-.checkbox-border {
-  width: 16px;
-  height: 15px;
-  margin-right: 7px;
-}
-
-.checkbox-icon-check {
-  display: none;
-  width: 16px;
-  height: 15px;
-  margin-right: 7px;
-  border-radius: 3px;
-}
-
-.modal-form-checkbox {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 30px;
-}
-
-.form-checkbox:checked ~ .checkbox-icon-check {
-  display: inline-block;
-  background-color: var(--color-links);
-}
-
-.form-checkbox:checked ~ .checkbox-border {
-  display: none;
-}
-
-.modal-form-button {
-  font-weight: 700;
-  font-family: inherit;
-  font-size: 16px;
-  line-height: 1.88;
-  letter-spacing: 0.06em;
-  background-color: var(--color-links);
-  color: var(--white-color);
-  cursor: pointer;
-  padding: 10px 52px;
-
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
-  border-radius: 4px;
-
-  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.modal-form-button:hover,
-.modal-form-button:focus {
-  background-color: #188ce8;
 }
 
 /* cats */
@@ -607,7 +453,7 @@ li.none-bg {
 }
 /* dvdvdvdv */
 
-header {
+/* header {
   box-sizing: border-box;
   min-height: 100vh;
   text-align: center;
@@ -631,9 +477,9 @@ header::before {
   background-size: cover;
   transition: 1s;
   /* Параллакс */
-  transform: translateZ(-1px) scale(2);
+/* transform: translateZ(-1px) scale(2);
 }
 header h1 {
   margin-top: -100px;
   font-size: 42px;
-}
+} */

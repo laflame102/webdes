@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>Nekofee - кафе для любителів котиків</title>
     <link rel="stylesheet" href="style.css" type="text/css" />
@@ -8,106 +9,73 @@
   </head>
   <body>
     <!-- Основний блок сайту -->
-    <div id="basic">
-      <table>
-        <tr>
-          <th>Company</th>
-          <th>Contact</th>
-          <th>Country</th>
-        </tr>
-        <tr>
-          <td>Alfreds Futterkiste</td>
-          <td>Maria Anders</td>
-          <td>Germany</td>
-        </tr>
-      </table>
-      <!-- Шапка сайту -->
-      <div id="head-site">
-        <a href="index.html"
-          ><img
-            src="/images/nekofee.png"
-            width="280"
-            height="130"
-            alt="Котейня"
-            title="Котейня"
-        /></a>
+    <div id="menu-top">
+      <div class="bg-1">
+        <ul>
+          <li>
+            <a href="/index.html" style="margin-right: 15px; margin-left: 21px"
+              >О нас</a
+            >
+          </li>
+          <li>
+            <a href="/assortiment.html" style="margin-right: 15px"
+              >Асортимент</a
+            >
+          </li>
+          <li>
+            <a href="/otzivi.html" style="margin-right: 15px">Відгуки</a>
+          </li>
+          <li>
+            <a href="/nashy-pushistiki.html" style="margin-right: 15px">Коти</a>
+          </li>
+          <li class="none-bg">
+            <a href="/kontakty.html" style="margin-right: 15px">Контакти</a>
+          </li>
+          <li class="none-bg">
+            <a href="/pravila.html" style="margin-right: 20px">Правила</a>
+          </li>
+        </ul>
+      </div>
+      <div class="bg-2"></div>
+    </div>
+    <!-- Контент о нас -->
+    <div id="content">
+      <!-- Контент - правий блок -->
+      <div class="right" style="margin-right: 150px">
+        <h1>Наші контакти</h1>
+        <p>Місто Жмеренка, туп. Ущилищний, 52</p>
+        <p>Менеджер Коваль Артем Дмитрович - 89964013036</p>
+        <p>Директор Nekafee, Панасов Микита - 89964035032</p>
+        <p>З питань та побажань пишіть на нашу пошту: nekofee.vin@gmail.com</p>
+        <b>Чекаємо вас з нетерпінням! З любов'ю, команда Nekofee! </b>
+        <p></p>
+        <img
+          src="/images/cafe3.png"
+          width="700"
+          height="500"
+          alt=""
+          title=""
+          style="margin-right: 10px"
+        />
+      </div>
+      <div id="zatemnenie">
+        <div id="okno" style="font-size: 15pt">
+          Наш номер: +38014881488<br />
+          <a href="#" class="close">закрити</a>
+        </div>
+        <form>
+          <label><input type="text" name="name" /></label>
+          <button type="submit">send</button>
+        </form>
       </div>
 
-      <!-- Верхнє меню сайту -->
-      <div id="menu-top">
-        <div class="bg-1">
-          <ul>
-            <li>
-              <a
-                href="/index.html"
-                style="margin-right: 15px; margin-left: 21px"
-                >О нас</a
-              >
-            </li>
-            <li>
-              <a href="/assortiment.html" style="margin-right: 15px"
-                >Асортимент</a
-              >
-            </li>
-            <li>
-              <a href="/otzivi.html" style="margin-right: 15px">Відгуки</a>
-            </li>
-            <li>
-              <a href="/nashy-pushistiki.html" style="margin-right: 15px"
-                >Коти</a
-              >
-            </li>
-            <li class="none-bg">
-              <a href="/kontakty.html" style="margin-right: 15px">Контакти</a>
-            </li>
-            <li class="none-bg">
-              <a href="/pravila.html" style="margin-right: 20px">Правила</a>
-            </li>
-          </ul>
-        </div>
-        <div class="bg-2"></div>
+      <div class="myclr"></div>
+      <!-- Підвал -->
+      <div id="podval">
+        <div class="yellow"></div>
+        <div class="p1"><br /></div>
       </div>
-      <!-- Контент о нас -->
-      <div id="content">
-        <!-- Контент - правий блок -->
-        <div class="right" style="margin-right: 150px">
-          <h1>Наші контакти</h1>
-          <p>Місто Жмеренка, туп. Ущилищний, 52</p>
-          <p>Менеджер Коваль Артем Дмитрович - 89964013036</p>
-          <p>Директор Nekafee, Панасов Микита - 89964035032</p>
-          <p>
-            З питань та побажань пишіть на нашу пошту: nekofee.vin@gmail.com
-          </p>
-          <b>Чекаємо вас з нетерпінням! З любов'ю, команда Nekofee! </b>
-          <p></p>
-          <img
-            src="/images/cafe3.png"
-            width="700"
-            height="500"
-            alt=""
-            title=""
-            style="margin-right: 10px"
-          />
-        </div>
-        <div id="zatemnenie">
-          <div id="okno" style="font-size: 15pt">
-            Наш номер: +38014881488<br />
-            <a href="#" class="close">закрити</a>
-          </div>
-          <form>
-            <label><input type="text" name="name" /></label>
-            <button type="submit">send</button>
-          </form>
-        </div>
-
-        <div class="myclr"></div>
-        <!-- Підвал -->
-        <div id="podval">
-          <div class="yellow"></div>
-          <div class="p1"><br /></div>
-        </div>
-        <div class="myclr"></div>
-      </div>
+      <div class="myclr"></div>
     </div>
   </body>
 </html>
