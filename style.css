@@ -81,7 +81,7 @@ figure.img {
   display: block;
   padding: 8px;
   text-decoration: none;
-  color: #fff; /* колір тексту білий */
+  color: #000; /* змінено колір тексту на чорний */
   font-size: 16px; /* розмір тексту за замовчуванням */
 }
 
@@ -116,6 +116,7 @@ figure.img {
   .navigation a {
     padding: 8px 20px; /* більше відступу для посилань */
     font-size: 16px; /* розмір тексту для ПК */
+    color: #fff; /* колір тексту білий */
   }
 }
 
